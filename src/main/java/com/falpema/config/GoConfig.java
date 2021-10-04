@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "goEntityManagerFactory", transactionManagerRef = "goTransactionManager", basePackages = {
-		"com.falpema.go.repository" })
+		"com.falpema.repository" })
 public class GoConfig {
 
 	@Autowired
@@ -55,7 +55,7 @@ public class GoConfig {
 		// se utiliza la coneccion
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(goDatasource());
-		em.setPackagesToScan("com.falpema.go.entities");
+		em.setPackagesToScan("com.falpema.entities");
 
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);

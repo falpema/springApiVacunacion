@@ -10,7 +10,7 @@ Este proyecto sirve de base para la configuración de un servidor de aplicacione
 ## Estructura del proyecto
 
 Realice la estructura del proyecto siguiendo la arquitectura MVC. Siga la estructura de acuerdo a la siguiente imagen, donde:
-1. En la definición de los paquetes para los modelos anteceder el nombre del origen de datos `com.falpema.facelec.entities` y `com.falpema.facelec.repository`
+1. En la definición de los paquetes para los modelos anteceder el nombre del origen de datos `com.falpema.vacunacion.entities` y `com.falpema.vacunacion.repository`
 2. Mantener separada las clases de configuración y utilidades según su paquete
 3. Descripción:
     1.   **Repository:** la consulta de los datos DAO.
@@ -72,8 +72,8 @@ Realice la estructura del proyecto siguiendo la arquitectura MVC. Siga la estruc
             spring.datasource.primary.jndi-name=java:/go
             spring.jpa.show-sql=true
             
-            coral.datasource.secondary.jndi-name=java:/coralApp
-            coral.jpa.show-sql=true 
+            falpema.datasource.secondary.jndi-name=java:/bdVacunacion
+            falpema.jpa.show-sql=true 
         ```
 * Configuración de **clases**:
     * En el paquete **com.falpema.config** crear una clase por cada JNDI *(Revise la configuración en el proyecto)*. 
@@ -217,8 +217,8 @@ Metodo que expone el objeto a traves de un **GET** en el paquete *Controller*
 
 * 0.0.1
     * DEFINICION DE ESTRUCTURA Y CONFIGURACIÓN: Se crea el proyecto de ejemplo
-    * Date: 28/09/2020
-    * Autor: Cfernand
+    * Date: 01/10/2020
+    * Autor: Fpenaloza
 * 0.0.1
     * TASK: 
         * Seguridad en los servicios   

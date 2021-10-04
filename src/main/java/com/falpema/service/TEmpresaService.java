@@ -9,8 +9,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import com.falpema.go.entities.TEmpresa;
-import com.falpema.go.repository.TEmpresaRepository;
+import com.falpema.entities.TEmpresa;
+import com.falpema.repository.TEmpresaRepository;
 import com.falpema.utils.GenericResponse;
 import com.falpema.utils.ParametersApp;
 

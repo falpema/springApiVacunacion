@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.falpema.go.entities.TEmpresa;
+import com.falpema.entities.TEmpresa;
 import com.falpema.service.TEmpresaService;
 import com.falpema.utils.GenericResponse;
 

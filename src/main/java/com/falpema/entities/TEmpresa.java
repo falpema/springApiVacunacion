@@ -1,4 +1,4 @@
-package com.falpema.go.entities;
+package com.falpema.entities;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
