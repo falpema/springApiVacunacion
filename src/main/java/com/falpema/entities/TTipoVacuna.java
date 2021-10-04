@@ -14,7 +14,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "T_TIPO_VACUNA")
-public class TtipoVacuna implements Serializable {
+public class TTipoVacuna implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -23,13 +23,13 @@ public class TtipoVacuna implements Serializable {
 	@Column(name = "descripcion", nullable = false, precision = 20, scale = 0)
 	private String descripcion;
 
-	public TtipoVacuna(String codigo, String descripcion) {
+	public TTipoVacuna(String codigo, String descripcion) {
 		super();
 		this.codigo = codigo;
 		this.descripcion = descripcion;
 	}
 
-	public TtipoVacuna() {
+	public TTipoVacuna() {
 		super();
 	}
 

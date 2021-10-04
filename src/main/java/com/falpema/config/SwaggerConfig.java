@@ -36,7 +36,7 @@ public class SwaggerConfig {
 		
 		return new ApiInfoBuilder()
 				.title("Coral API")
-				.contact(new Contact("GO. CORP.","www.gerardoortiz.com", "info@gerardoortiz.com"))
+				.contact(new Contact("falpema."," ", " "))
 				.description("Servicios REST")
 				.license("Private")
 				.version("1.0")

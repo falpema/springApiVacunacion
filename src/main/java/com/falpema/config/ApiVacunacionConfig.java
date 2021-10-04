@@ -20,42 +20,42 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(entityManagerFactoryRef = "coralEntityManagerFactory", transactionManagerRef = "coralTransactionManager", basePackages = {
-		"com.falpema.codes.repository" })
-public class CoralConfig {
+@EnableJpaRepositories(entityManagerFactoryRef = "apiVacEntityManagerFactory", transactionManagerRef = "apiVacTransactionManager", basePackages = {
+		"com.falpema.repository" })
+public class ApiVacunacionConfig {
 
 	@Autowired
 	private Environment env;
 
 	@Bean
-	@ConfigurationProperties(prefix = "coral.datasource.secondary")
+	@ConfigurationProperties(prefix = "falpema.datasource.secondary")
 	public JndiPropertyHolder segundary() {
 		return new JndiPropertyHolder();
 	}
 
-	@Bean(name = "coralDaraSource")
-	public DataSource coralDatasource() {
+	@Bean(name = "apiVacDaraSource")
+	public DataSource apiVacDatasource() {
 		JndiDataSourceLookup dataSourceLookup = new JndiDataSourceLookup();
 		DataSource dataSource = dataSourceLookup.getDataSource(segundary().getJndiName());
 		return dataSource;
 	}
 
 //	@Primary
-//	@Bean(name = "coralDaraSource")
-//	public DataSource coralDatasource() {
+//	@Bean(name = "apiVacDaraSource")
+//	public DataSource apiVacDatasource() {
 //		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-//		dataSource.setUrl(env.getProperty("coral.datasource.url")); // aqui lo del properties
-//		dataSource.setUsername(env.getProperty("coral.datasource.username"));
-//		dataSource.setPassword(env.getProperty("coral.datasource.password"));
-//		dataSource.setDriverClassName(env.getProperty("coral.datasource.driver-class-name"));
+//		dataSource.setUrl(env.getProperty("apiVac.datasource.url")); // aqui lo del properties
+//		dataSource.setUsername(env.getProperty("apiVac.datasource.username"));
+//		dataSource.setPassword(env.getProperty("apiVac.datasource.password"));
+//		dataSource.setDriverClassName(env.getProperty("apiVac.datasource.driver-class-name"));
 //		return dataSource;
 //	}
 
-	@Bean(name = "coralEntityManagerFactory") // va el nombr declardo al inicio
+	@Bean(name = "apiVacEntityManagerFactory") // va el nombr declardo al inicio
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		// se utiliza la coneccion
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-		em.setDataSource(coralDatasource());
+		em.setDataSource(apiVacDatasource());
 		em.setPackagesToScan("com.falpema.codes.entities");
 
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -63,14 +63,14 @@ public class CoralConfig {
 
 		// manda propiedades declaradas en el properies.aplication
 		Map<String, Object> properties = new HashMap<>();
-		properties.put("hibernate.show-sql", env.getProperty("coral.jpa.show-sql")); // muestra sql en consola
+		properties.put("hibernate.show-sql", env.getProperty("apiVac.jpa.show-sql")); // muestra sql en consola
 		// pendiente pasar dialecto
 		em.setJpaPropertyMap(properties);
 
 		return em;
 	}
 
-	@Bean(name = "coralTransactionManager") // se hace referecnia a la declaracion en la cabecera
+	@Bean(name = "apiVacTransactionManager") // se hace referecnia a la declaracion en la cabecera
 	public PlatformTransactionManager transactionManager() {
 		JpaTransactionManager transactionManager = new JpaTransactionManager();
 		// mando el metodo anterior
