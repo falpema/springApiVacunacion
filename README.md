@@ -69,16 +69,16 @@ Realice la estructura del proyecto siguiendo la arquitectura MVC. Siga la estruc
 * Configuración `application.properties` 
     *  Configurar la conexión a la base de datos mediante su **JNDI**
         ```spring
-            spring.datasource.primary.jndi-name=java:/go
+            spring.datasource.primary.jndi-name=java:/bdVacunacion
             spring.jpa.show-sql=true
             
-            falpema.datasource.secondary.jndi-name=java:/bdVacunacion
-            falpema.jpa.show-sql=true 
+            apiVac.datasource.secondary.jndi-name=java:/bdVacunacion
+            apiVac.jpa.show-sql=true 
         ```
 * Configuración de **clases**:
     * En el paquete **com.falpema.config** crear una clase por cada JNDI *(Revise la configuración en el proyecto)*. 
-        *   CoralConfig.java 
-        *   GoConfig.java
+        *   apiVacunacion.java 
+
     * En la clase principal del proyecto **main** realizar la herencia de la clase `extends SpringBootServletInitializer` e implementar el método a sobrescribir
         ```java
             @Override
@@ -229,4 +229,4 @@ Metodo que expone el objeto a traves de un **GET** en el paquete *Controller*
 
 –  [falpema.](https://github.com/falpema)
 # springApiVacunacion
-# springApiVacunacion
+
