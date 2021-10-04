@@ -4,15 +4,15 @@
 
 CREATE TABLE IF NOT EXISTS public.t_empleado
 (
-    apellidos character(30) COLLATE pg_catalog."default",
+    apellidos character(40) COLLATE pg_catalog."default" NOT NULL,
     cedula character(15) COLLATE pg_catalog."default" NOT NULL,
-    nombres character(30) COLLATE pg_catalog."default",
+    nombres character(30) COLLATE pg_catalog."default" NOT NULL,
     email character(30) COLLATE pg_catalog."default" NOT NULL,
     "fechaNacimiento" date,
     direccion character(50) COLLATE pg_catalog."default",
     "telefonoMovil" character(15) COLLATE pg_catalog."default",
     vacunado character(2) COLLATE pg_catalog."default",
-    usuaio character(12)[] COLLATE pg_catalog."default",
+    usuario character(12)[] COLLATE pg_catalog."default",
     password character(12)[] COLLATE pg_catalog."default",
     CONSTRAINT t_empleado_pkey PRIMARY KEY (cedula)
 )
@@ -34,7 +34,7 @@ COMMENT ON COLUMN public.t_empleado."telefonoMovil"
 COMMENT ON COLUMN public.t_empleado.vacunado
     IS 'campo para conocer si esta vacunado S/N';
 
-COMMENT ON COLUMN public.t_empleado.usuaio
+COMMENT ON COLUMN public.t_empleado.usuario
     IS 'usuario del empleado';
 
 COMMENT ON COLUMN public.t_empleado.password
