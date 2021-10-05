@@ -87,7 +87,7 @@ Realice la estructura del proyecto siguiendo la arquitectura MVC. Siga la estruc
             	}
         ```
 ## Objetos de respuesta en servicios REST 
- >  Para la comunicacíon entre los diferentes sistemas de Go Corp.
+ >  Para la comunicacíon entre los diferentes sistemas de proyecto.
 
 Crear la clase **Java** llamada *GenericResponse* la cual contiene los objetos que responderá el servicio Web
 ```java
